@@ -1,0 +1,43 @@
+{
+    "manifest_version": 3,
+    "name": "Bonus Bandits",
+    "description": "Collect your daily bonuses every day with Bonus Bandits!",
+    "version": "2.0.9",
+    "icons": {
+        "128": "icons/icon.png",
+        "256": "icons/icon.png",
+        "16": "icons/icon.png",
+        "48": "icons/icon.png"
+    },
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "type": "module",
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*.fortunecoins.com/*",
+                "*://*.chumbacasino.com/*",
+                "*://*.zulacasino.com/*",
+                "*://stake.us/*",
+                "*://sportzino.com/*",
+                "*://globalpoker.com/*",
+                "*://*.chanced.com/*",
+                "*://login.auth.poker/*",
+                "*://*.globalpoker.com/*"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ],
+    "permissions": [
+        "storage",
+        "tabs",
+        "activeTab",
+        "alarms"
+    ]
+}
