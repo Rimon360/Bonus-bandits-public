@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+
+  <body>
+    <main>
+      <header>
+        <div class="h-left-side">
+          <div class="logo-container">
+            <a href="" target="_blank">
+              <div class="logo"></div>
+            </a>
+          </div>
+          <div class="h-toogle">
+            <small>Close Tab?</small>
+            <input type="checkbox" name="" id="toogleTab" />
+          </div>
+          <!-- <div class="site-name">Daily Bonus Grapper</div> -->
+        </div>
+        <div class="h-midle">
+          <button title="Open all site at once" id="openAllAtOnce">
+            Collect All
+          </button> 
+          <button id="export">
+            Export
+          </button> 
+          <label id="import" for="file_import"> Import </label>
+          <input type="file" name="" style="display: none;" id="file_import" />
+        </div>
+        <div class="h-right-side">
+          <a href="">
+            <button id="homeButton" class="home">
+              <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+                <path d="M80 212v236a16 16 0 0016 16h96V328a24 24 0 0124-24h80a24 24 0 0124 24v136h96a16 16 0 0016-16V212" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" />
+                <path d="M480 256L266.89 52c-5-5.28-16.69-5.34-21.78 0L32 256M400 179V64h-48v69" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" />
+              </svg>
+            </button>
+          </a>
+          <button class="logout">
+            <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+              <path d="M304 336v40a40 40 0 01-40 40H104a40 40 0 01-40-40V136a40 40 0 0140-40h152c22.09 0 48 17.91 48 40v40M368 336l80-80-80-80M176 256h256" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" />
+            </svg>
+          </button>
+        </div>
+      </header>
+      <div class="page-container">
+        <!-- connect form start -->
+        <div class="connect-form connectFormPage pages ds-none">
+          <form id="connect-form">
+            <h3>Connect <span id="title"></span></h3>
+            <div>
+              <input type="hidden" name="siteName" />
+              <label>
+                <p>E-mail/Username</p>
+                <input name="email" required type="text" placeholder="Enter your email/username" />
+              </label>
+              <label>
+                <p>Password</p>
+                <div class="pass-with-eye">
+                  <input name="password" required type="password" placeholder="Enter your password" />
+                  <span class="eye">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="ionicon eye-close" viewBox="0 0 512 512">
+                      <path
+                        d="M432 448a15.92 15.92 0 01-11.31-4.69l-352-352a16 16 0 0122.62-22.62l352 352A16 16 0 01432 448zM255.66 384c-41.49 0-81.5-12.28-118.92-36.5-34.07-22-64.74-53.51-88.7-91v-.08c19.94-28.57 41.78-52.73 65.24-72.21a2 2 0 00.14-2.94L93.5 161.38a2 2 0 00-2.71-.12c-24.92 21-48.05 46.76-69.08 76.92a31.92 31.92 0 00-.64 35.54c26.41 41.33 60.4 76.14 98.28 100.65C162 402 207.9 416 255.66 416a239.13 239.13 0 0075.8-12.58 2 2 0 00.77-3.31l-21.58-21.58a4 4 0 00-3.83-1 204.8 204.8 0 01-51.16 6.47zM490.84 238.6c-26.46-40.92-60.79-75.68-99.27-100.53C349 110.55 302 96 255.66 96a227.34 227.34 0 00-74.89 12.83 2 2 0 00-.75 3.31l21.55 21.55a4 4 0 003.88 1 192.82 192.82 0 0150.21-6.69c40.69 0 80.58 12.43 118.55 37 34.71 22.4 65.74 53.88 89.76 91a.13.13 0 010 .16 310.72 310.72 0 01-64.12 72.73 2 2 0 00-.15 2.95l19.9 19.89a2 2 0 002.7.13 343.49 343.49 0 0068.64-78.48 32.2 32.2 0 00-.1-34.78z"
+                      />
+                      <path d="M256 160a95.88 95.88 0 00-21.37 2.4 2 2 0 00-1 3.38l112.59 112.56a2 2 0 003.38-1A96 96 0 00256 160zM165.78 233.66a2 2 0 00-3.38 1 96 96 0 00115 115 2 2 0 001-3.38z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="ionicon eye-open ds-none" viewBox="0 0 512 512">
+                      <path d="M255.66 112c-77.94 0-157.89 45.11-220.83 135.33a16 16 0 00-.27 17.77C82.92 340.8 161.8 400 255.66 400c92.84 0 173.34-59.38 221.79-135.25a16.14 16.14 0 000-17.47C428.89 172.28 347.8 112 255.66 112z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" />
+                      <circle cx="256" cy="256" r="80" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32" />
+                    </svg>
+                  </span>
+                </div>
+              </label>
+              <button name="button" bg type="submit">
+                Connect
+              </button>
+              <button type="button" class="c-red" name="buttonClear" bg>
+                Clear
+              </button>
+              <br />
+              <div>
+                <p class="create-acc">Don't have an account? <a id="refLink" target="_blank" id="site-ref-link" href="#">Create now</a></p>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- connect form end -->
+        <div class="login-page loginPage pages ds-none">
+          <form id="login-form">
+            <label>
+              <p>License key</p>
+              <input required name="license" type="text" placeholder="Enter your license key" />
+            </label>
+            <button bg type="submit">
+              <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+                <path d="M192 176v-40a40 40 0 0140-40h160a40 40 0 0140 40v240a40 40 0 01-40 40H240c-22.09 0-48-17.91-48-40v-40" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" />
+                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M288 336l80-80-80-80M80 256h272" />
+              </svg>
+            </button>
+          </form>
+        </div>
+        <div class="home-page homePage pages ds-none">
+          <div class="card-container">
+            <!-- cards -->
+            <div class="card fortune">
+              <div class="c-top">
+                <div class="c-left">
+                  <div class="c-logo">
+                    <img src="assets/fortune.webp" alt="" />
+                  </div>
+                </div>
+                <div class="c-right">
+                  <div class="c-text">
+                    <div class="c-site-title">
+                      <h3>FortuneCoins</h3>
+                    </div>
+                    <div class="c-details-text">
+                      <small>connect and collect your daily bonus!</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="c-bottom">
+                <div value="fortunecoins" class="c-timer flex">
+                  <button class="start-collecting b-green">Start Collecting</button>
+                </div>
+                <div class="flex">
+                  <button is-connected="false" class="connect-button" name="fortunecoins">Connect</button>
+                  <button class="start-now-button b-green" name="fortunecoins">Start Now</button>
+                </div>
+              </div>
+            </div>
+            <!-- cards -->
+            <div class="card chumba">
+              <div class="c-top">
+                <div class="c-left">
+                  <div class="c-logo">
+                    <img src="assets/chumba.gif" alt="" />
+                  </div>
+                </div>
+                <div class="c-right">
+                  <div class="c-text">
+                    <div class="c-site-title">
+                      <h3>ChumbaCasino</h3>
+                    </div>
+                    <div class="c-details-text">
+                      <small>connect and collect your daily bonus!</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="c-bottom">
+                <div value="chumbacasino" class="c-timer flex">
+                  <button class="start-collecting b-green">Start Collecting</button>
+                </div>
+                <div class="flex">
+                  <button is-connected="false" class="connect-button" name="chumbacasino">Connect</button>
+                  <button class="start-now-button b-green" name="chumbacasino">Start Now</button>
+                </div>
+              </div>
+            </div>
+            <!-- cards -->
+            <div class="card zula">
+              <div class="c-top">
+                <div class="c-left">
+                  <div class="c-logo">
+                    <img src="assets/zula.png" alt="" />
+                  </div>
+                </div>
+                <div class="c-right">
+                  <div class="c-text">
+                    <div class="c-site-title">
+                      <h3>ZulaCasino</h3>
+                    </div>
+                    <div class="c-details-text">
+                      <small>connect and collect your daily bonus!</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="c-bottom">
+                <div value="zulacasino" class="c-timer flex">
+                  <button class="start-collecting b-green">Start Collecting</button>
+                </div>
+                <div class="flex">
+                  <button is-connected="false" class="connect-button" name="zulacasino">Connect</button>
+                  <button class="start-now-button b-green" name="zulacasino">Start Now</button>
+                </div>
+              </div>
+            </div>
+            <!-- cards -->
+            <div class="card stake">
+              <div class="c-top">
+                <div class="c-left">
+                  <div class="c-logo">
+                    <img src="assets/stake.jpg" alt="" />
+                  </div>
+                </div>
+                <div class="c-right">
+                  <div class="c-text">
+                    <div class="c-site-title">
+                      <h3>Stake</h3>
+                    </div>
+                    <div class="c-details-text">
+                      <small>connect and collect your daily bonus!</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="c-bottom">
+                <div value="stake" class="c-timer flex">
+                  <button class="start-collecting b-green">Start Collecting</button>
+                </div>
+                <div class="flex">
+                  <button style="display: none;" is-connected="false" class="connect-button" name="stake">Connect</button>
+                  <button><a target="_blank" style="color: white; text-decoration: none;" href="https://stake.us/?tab=register&modal=auth">Signup</a></button>
+                  <button class="start-now-button b-green" name="stake">Start Now</button>
+                </div>
+              </div>
+            </div>
+            <!-- cards -->
+            <div class="card sportzino">
+              <div class="c-top">
+                <div class="c-left">
+                  <div class="c-logo">
+                    <img src="assets/sportzino.webp" alt="" />
+                  </div>
+                </div>
+                <div class="c-right">
+                  <div class="c-text">
+                    <div class="c-site-title">
+                      <h3>Sportzino</h3>
+                    </div>
+                    <div class="c-details-text">
+                      <small>connect and collect your daily bonus!</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="c-bottom">
+                <div value="sportzino" class="c-timer flex">
+                  <button class="start-collecting b-green">Start Collecting</button>
+                </div>
+                <div class="flex">
+                  <button is-connected="false" class="connect-button" name="sportzino">Connect</button>
+                  <button class="start-now-button b-green" name="sportzino">Start Now</button>
+                </div>
+              </div>
+            </div>
+            <!-- cards -->
+            <div class="card chanced">
+              <div class="c-top">
+                <div class="c-left">
+                  <div class="c-logo">
+                    <img src="assets/chanced.png" alt="" />
+                  </div>
+                </div>
+                <div class="c-right">
+                  <div class="c-text">
+                    <div class="c-site-title">
+                      <h3>Chanced</h3>
+                    </div>
+                    <div class="c-details-text">
+                      <small>connect and collect your daily bonus!</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="c-bottom">
+                <div value="chanced" class="c-timer flex">
+                  <button class="start-collecting b-green">Start Collecting</button>
+                </div>
+                <div class="flex">
+                  <button is-connected="false" class="connect-button ds-none" name="chanced">Connect</button>
+                  <button><a target="_blank" style="color: white; text-decoration: none;" href=" https://chanced.com/c/tnrgaj">Signup</a></button>
+                  <button class="start-now-button b-green" name="chanced">Start Now</button>
+                </div>
+              </div>
+            </div>
+            <!-- cards -->
+            <div class="card globalpoker">
+              <div class="c-top">
+                <div class="c-left">
+                  <div class="c-logo">
+                    <img src="assets/gp.svg" alt="" />
+                  </div>
+                </div>
+                <div class="c-right">
+                  <div class="c-text">
+                    <div class="c-site-title">
+                      <h3>GlobalPoker</h3>
+                    </div>
+                    <div class="c-details-text">
+                      <small>connect and collect your daily bonus!</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="c-bottom">
+                <div value="globalpoker" class="c-timer flex">
+                  <button class="start-collecting b-green">Start Collecting</button>
+                </div>
+                <div class="flex">
+                  <button is-connected="false" class="connect-button" name="globalpoker">Connect</button>
+                  <button class="start-now-button b-green" name="globalpoker">Start Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <div class="message-container ds-none">
+      --
+    </div>
+  </body>
+
+  <script src="popup.js"></script>
+</html>
